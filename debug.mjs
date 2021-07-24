@@ -1,3 +1,4 @@
+import * as util from 'util';
 import { dirname } from 'path';
 import { fileURLToPath } from 'url';
 
@@ -12,13 +13,15 @@ const consoleJson = (input) => {
 
 export const isMain = (meta, proc) => proc.argv[1] === fileURLToPath(meta.url);
 
-export const dump = (...args) => {
-    console.log(...args);
-    process.exit();
+export const log = (...args) => {
+    for (const arg of args) {
+        console.log(util.inspect(arg, { showHidden: false, depth: null }));
+    }
 }
 
-export const log = (...args) => {
-    console.log(...args);
+export const dump = (...args) => {
+    log(...args);
+    process.exit();
 }
 
 export const jdump = (...args) => {
