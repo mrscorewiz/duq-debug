@@ -1,0 +1,11 @@
+{
+  "name": "duq-debug",
+  "version": "1.0.0",
+  "description": "Debugging tools",
+  "main": "debug.mjs",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "rubduq",
+  "license": "ISC"
+}
